@@ -21,7 +21,7 @@
     {% elif attempts >= 5 %}
         <button class="try-again-button" onclick="window.location.href='/reset'">Try Again</button>
     {% endif %}
-    <p class="attempts-left">Attempts left: {{ 5 - attempts }}</p> <!-- Move the attempts-left paragraph to the bottom -->
+    <p class="attempts-left">Attempts left: {{ 5 - attempts }}</p> <!-- Moved the attempts-left paragraph to the bottom -->
 </body>
 <script>
     // JavaScript to handle page refresh
