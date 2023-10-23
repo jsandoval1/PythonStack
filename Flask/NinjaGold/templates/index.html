@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+    <title>Ninja Gold Game</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="title-container">
+            <p class="ninja-gold-title">Ninja Gold</p>
+            <p class="gold-label">Your Gold: {{ session['gold'] }}</p>
+            <p class="rules">
+                Rules: You have 15 moves to earn 200 gold or you lose.
+            </p>
+        </div>
+        <div class="container">
+            <div class="activity-buttons">
+                {% if session['game_result'] != 'win' and session['game_result'] != 'lose' %}
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="activity" value="farm" />
+                    <button type="submit" class="activity-button">
+                        Farm (+10-20 gold)
+                    </button>
+                </form>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="activity" value="cave" />
+                    <button type="submit" class="activity-button">
+                        Cave (+10-20 gold)
+                    </button>
+                </form>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="activity" value="house" />
+                    <button type="submit" class="activity-button">
+                        House (+10-20 gold)
+                    </button>
+                </form>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="activity" value="casino" />
+                    <button type="submit" class="activity-button">
+                        Casino (win/lose 50 gold)
+                    </button>
+                </form>
+                {% endif %}
+            </div>
+            <div class="activity-buttons">
+                {% if session['game_result'] == 'win' %}
+                <p class="result-message win-message">You Win!</p>
+                <form action="/reset">
+                    <button type="submit" class="reset-button">Play Again</button>
+                </form>
+                {% elif session['game_result'] == 'lose' %}
+                <p class="result-message lose-message">You Lose!</p>
+                <form action="/reset">
+                    <button type="submit" class="reset-button">Play Again</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div id="activity-log" class="activity-log">
+        <div class="activities">
+            <h2 class="activity-count">Activities ({{ session['moves'] }}/15):</h2>
+            <ul>
+                {% for activity in session['activities'] %}
+                <li
+                    class="{% if activity['class'] == 'text-success' %}win{% elif activity['class'] == 'text-danger' %}lose{% endif %}">
+                    {{ activity['message'] }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

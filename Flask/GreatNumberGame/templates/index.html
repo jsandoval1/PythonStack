@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Great Number Game</title>
+</head>
+<body>
+    <h1>Great Number Game</h1>
+    {% if attempts < 5 and message != "Correct!" %}
+        <form method="POST">
+            <label for="guess">Guess the number (1-100):</label>
+            <input type="number" id="guess" name="guess" required>
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+    <p class="{{ message_class }}">{{ message }}</p>
+    {% if message == "Correct!" %}
+        <form method="POST" action="/reset">
+            <input type="submit" class="play-again-button" value="Play Again"> <!-- Add the play-again-button class -->
+        </form>
+    {% elif attempts >= 5 %}
+        <button class="try-again-button" onclick="window.location.href='/reset'">Try Again</button>
+    {% endif %}
+    <p class="attempts-left">Attempts left: {{ 5 - attempts }}</p> <!-- Move the attempts-left paragraph to the bottom -->
+</body>
+<script>
+    // JavaScript to handle page refresh
+    window.onload = function () {
+        if (performance.navigation.type === 1) {
+            // Page has been refreshed, redirect to the /reset route
+            window.location.href = "/reset";
+        }
+    };
+</script>
+</html>
+
+

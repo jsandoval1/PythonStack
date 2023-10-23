@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Open Head -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Bootstrap CSS library -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+        crossorigin="anonymous" />
+    <!-- Link my custom CSS file 'style.css'-->
+    <link 
+        rel="stylesheet" 
+        href="static/style.css" />
+    <!-- Set Title -->
+    <title>User List</title>
+</head>
+<!-- Close Head and Open Body -->
+
+<body>
+    <!-- Make div with the class 'container' (Bootstrap) -->
+    <div class="container">
+        <!-- h1 heading 'User List' using Bootstrap to center text, regardless of screen size -->
+        <h1 class="text-center">User List</h1>
+        <!-- Bootstrap class 'class=table' styles the table. -->
+        <table class="table">
+            <!-- Make the table header (thead) section -->
+            <thead>
+                <!-- table row (tr) within the thead -->
+                <tr>
+                    <!-- Cells (th) within the row (tr) to label the table column headers -->
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Full Name</th>
+                </tr>
+                <!-- End table header section -->
+            </thead>
+            <!-- Create table body (tbody) section. -->
+            <tbody>
+                <!-- Start for loop to count over # in list of 'users' -->
+                {% for user in users %}
+                <!-- Create a table row (tr) within the tbody for each user -->
+                <tr>
+                    <!-- Inside each (tr) row: -->
+                    <!-- Create a cell (td) and populate it with the user's 'first_name' -->
+                    <td>{{ user['first_name'] }}</td>
+                    <!-- Create a cell (td) and populate it with the user's 'last_name' -->
+                    <td>{{ user['last_name'] }}</td>
+                    <!-- Create a cell (td) and populate it with the user's 'first_name and 'last_name' -->
+                    <td>{{ user['first_name'] }} {{ user['last_name'] }}</td>
+                    <!-- Close the current table row -->
+                </tr>
+                {% endfor %}
+                <!-- End for loop -->
+            </tbody>
+        </table>
+        <!-- Close Table -->
+    </div>
+    <!-- Close Div -->
+</body>
+<!-- Close Body -->
+
+</html>

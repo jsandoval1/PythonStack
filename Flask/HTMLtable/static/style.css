@@ -1,0 +1,28 @@
+/* Custom CSS styles */
+
+/* Set <body> (bg) gray */
+body {
+    background-color: slategrey !important;
+}
+
+/* Merge cell borders */
+table.table {
+    border-collapse: collapse;
+}
+
+/* <th> borders */
+table.table th {
+    border: 4px solid black; /* Adjust the thickness as needed */
+}
+
+/* Set borders for the cell rows so they flow nicely. I did not like
+how "table.table td," looked. Moved it up but saved it here incase. */
+table.table tr {
+    border: 2px solid black;/* Adjust the thickness as needed */
+} 
+
+/* Apply orange background color to <th> inside the <thead> inside the
+<table> elements with an !important selector to override Bootstrap */
+table.table thead th {
+    background-color: orange !important;
+}

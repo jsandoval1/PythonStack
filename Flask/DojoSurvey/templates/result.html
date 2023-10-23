@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Result Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="result-container">
+            <h1 class="mb-4">Form Data</h1>
+            <!-- Using Jinjs to capture the info that was sent in our POST 
+            form.html to the server. That will populate these. -->
+            <p>Name: {{ name }}</p>
+            <p>Email: {{ email }}</p>
+            <p>Favorite Language: {{ language }}</p>
+            <p>Are you having fun? {{ having_fun }}</p>
+            <p>Color choice: {{ color }}</p>
+            <a href="/" class="btn btn-warning accent">Back to Form</a>
+        </div>
+    </div>
+</body>
+
+</html>

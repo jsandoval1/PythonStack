@@ -1,0 +1,42 @@
+/* Set font family for site */
+*{
+    font-family:cursive;
+}
+
+/* Center the content */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: slategray;
+}
+
+h1 {
+    color: orange;
+    /* Orange text color */
+}
+
+/* Styling the buttons */
+button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Add hover effect for buttons */
+button:hover {
+    background-color: darkorange;
+}
+
+/* Style the input field */
+input[type="number"] {
+    padding: 5px;
+    border: 2px solid whitesmoke;
+    border-radius: 3px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel=" stylesheet" href="static\style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Set Title -->
+    <title>Visit Counter</title>
+</head>
+
+<body>
+    <!-- Set h1 and text -->
+    <h1>My Visit Counter!</h1>
+    <!-- Set <strong> tags to bold our count as it increases -->
+    <p>You have visited this site <strong>{{ visit_count }}</strong> times.</p>
+
+    <!-- Build buttons as forms -->
+    <form action="/add_2" method="get">
+        <button type="submit">+2</button>
+    </form>
+
+    <form action="/reset" method="get">
+        <button type="submit">Reset</button>
+    </form>
+
+    <form action="/increment" method="get">
+        <!-- Increment by label prior to input number box -->
+        <label for="increment_value">Increment by:</label>
+        <!-- Set min value to 1 to prevent negatives and default text as 1 -->
+        <input type="number" id="increment_value" name="increment_value" min="1" value="1">
+        <button type="submit">Increment</button>
+    </form>
+</body>
+
+</html>

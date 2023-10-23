@@ -1,0 +1,23 @@
+/* Custom CSS */
+body {
+    background-color: slategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+/*Button colors */
+.btn-primary {
+    background-color: orange;
+    border-color: darkorange;
+}
+.btn-primary:hover {
+    background-color: darkorange;
+    border-color: orange;
+}

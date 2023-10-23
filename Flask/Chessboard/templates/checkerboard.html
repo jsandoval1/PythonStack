@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Checkerboard</title>
+    <style>
+        /* Style for even boxes based on 'color1'*/
+        .color1 {
+            background-color: {{color1}};
+        }
+
+        /* Style for odd boxes based on 'color2*/
+        .color2 {
+            background-color: {{color2}};
+        }
+    </style>
+    <!-- THIS TOOK FOREVER TO FIGURE OUT THAT STATIC CSS WILL NOT RESPOND TO DYNAMIC AND NEEDS TO BE PLACED IN HTML -->
+</head>
+<body>
+    <h1>*** CHECKERBOARD ***</h1>
+    <table>
+        {% for row in range(rows) %}
+        <!-- - Iterate over 'rows' in put from URL -->
+        <!-- - For each row that has been input, create a <tr> (table row) element -->
+        <tr>
+            {% for column in range(columns) %}
+            <!-- - Iterate over 'columns' in input from URL -->
+            <!-- - For each column that has been input, create a <td> (table cell) element -->
+            <!-- Check to see (row + column) is even or odd. -->
+            <td class=
+                    "{% if (row + column) % 2 == 0 %}
+                        color1
+                    {% else %}
+                        color2
+                    {% endif %}">
+                <!-- If even, set the class to 'color1' -->
+                <!-- If odd (else) , set the class to 'color2'. -->
+            </td>
+            {% endfor %}
+            <!-- END: "Iterate over 'columns' in put from URL" -->
+        </tr>
+        {% endfor %}
+        <!-- END: "Iterate over 'rows' in put from URL" -->
+    </table>
+    <!-- Close  </table> and </body> tags. -->
+</body>
+
+</html>

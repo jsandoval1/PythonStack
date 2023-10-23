@@ -1,0 +1,162 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Body styles */
+body {
+    background-image: url('https://www.worldhistory.org/uploads/images/7894.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container styles */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 30px 10% 0px 10%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title-container {
+    text-align: center;
+    width: 40%;
+}
+
+/* Styling for Ninja Gold and Your Gold */
+.ninja-gold-title {
+    color: #fff;
+    font-size: 25px;
+    margin: 0; /* Remove default margin */
+}
+
+.gold-label {
+    font-size: 20px;
+    color: gold;
+    margin-right: 10px;
+}
+
+.gold-amount {
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+}
+
+.rules {
+    color: white; 
+    font-weight: bold; 
+    font-size: 15px;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styles */
+.activity-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+}
+
+.activity-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    font-size: 10px;
+}
+
+.activity-button:hover {
+    background-color: #0056b3;
+}
+
+/* Result message styles */
+.result-message {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Add black border around text*/
+}
+
+.win-message {
+    color: green;
+}
+
+.lose-message {
+    color: red;
+}
+
+/* Reset button styles */
+.reset-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.reset-button:hover {
+    background-color: #c82333;
+}
+
+/* Activity log styles */
+.activity-log {
+    margin: 20px 10% 0px 10%;
+    padding: 10px 10px 3px 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust the alpha value (last parameter) for opacity */
+    border-radius: 4px;
+    text-align: center;
+}
+
+.activity-count {
+    color: white;
+    font-weight: bold;
+}
+
+.activity-log h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.activity-log ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.activity-log li {
+    margin: 5px 0;
+}
+
+.activity-log ul li {
+    font-weight: bold;
+}
+
+.activity-log .win {
+    color: green;
+}
+
+.activity-log .lose {
+    color: red;
+}

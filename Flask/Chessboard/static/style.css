@@ -1,0 +1,30 @@
+/* BG color */
+*{
+    background-color: slategray;
+}
+
+/* Setting flex for all content inside body to be centered */
+body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* h1 styling */
+h1{
+    padding: 10px;
+    margin: 15px 0;
+    font-family: cursive;
+}
+
+/* Deletes border around what is within (td) */
+table{
+    border-collapse: collapse;
+}
+
+/* Style for each table td*/
+td {
+    width: 100px;
+    height: 100px;
+}
