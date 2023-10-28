@@ -3,6 +3,7 @@ import random
 
 app = Flask(__name__)
 app.secret_key = 'John'  # Change this to a strong, unique key
+# ! Testing and playing around with Git Commit
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
